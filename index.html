@@ -1,0 +1,198 @@
+<html><head>
+    <title>Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #462052;
+            color: #ffffff;
+        }
+
+        .sticky-tech {
+            color: #ffffff;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: opacity 1s ease-in-out;
+            font-size: 128px;
+            z-index: 10;
+            background-color: #3d094d;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .sticky-tech.disappearing {
+            opacity: 0;
+        }
+
+        .portfolio-content {
+            opacity: 0;
+            transition: opacity 1s ease-in-out 1s;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+            margin-top: 60px;
+        }
+
+        .portfolio-item {
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #462052;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .portfolio-item img {
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .portfolio-header {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px;
+            background-color: #ffffff;
+            position: fixed;
+            height: 60px;
+            width: 100%;
+            top: 0;
+            z-index: 15;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 30px;
+            color: #462052;
+        }
+
+        .about-me {
+            background-color: #370b44;
+            padding: 90px 40px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .about-me a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            .portfolio-item {
+                width: 100%;
+            }
+
+            .portfolio-header, .navbar a {
+                font-size: 36px;
+                            text-align: center;
+            }
+        }
+
+        .programming-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .programming-language {
+            font-family: 'Roboto', sans-serif;
+            margin-left: 10px;
+        }
+         .margins {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+         }
+
+  .padding {
+    padding: 15px;
+  }
+</style>
+</head><body><p class="margins">This is text with margins.</p>
+    
+
+
+    <div class="sticky-tech disappearing" style="display: none;">StoikyTech</div>
+
+    <div class="navbar">
+        <a href="#about-me">About Me</a>
+        <a href="#Services">Services (coming soon)</a>
+        <a href="#Services">Website Maintenance</a>
+    </div>
+    
+    <div class="portfolio-content" style="opacity: 1;"></div>
+        <h1 class="portfolio-header">Welcome to StoikyTech Website</h1>
+        <div class="portfolio-item">
+
+<ul class="programming-list">
+    <p> As an I.T student, I've been introduced to the basics of several programming languages, 
+        including Python, HTML, and JavaScript. I've learned the fundamentals of Python, a beginner-friendly language,
+        as well as the basics of web development with HTML. Additionally, I've started to explore JavaScript, which has opened up new possibilities
+        in my programming journey.</p>
+        <p class="margins"></p>
+        <div class="programming-item">
+            <img src="Python.png" alt="Python Logo" class="icon">
+            <span class="programming-language">Python</span>
+        </div>
+        <div class="programming-item">
+            <img src="HTML.png" alt="HTML Logo" class="icon">
+            <span class="programming-language">HTML</span>
+        </div>
+        <div class="programming-item">
+            <img src="javascript.png" alt="JavaScript Logo" class="icon">
+            <span class="programming-language">JavaScript</span>
+        </div>
+</ul></div>
+<div class="about-me" id="about-me">
+    <h2>Contacts</h2>
+    <p><a href="mailto:Sy.matin123@gmail.com">Sy.matin123@gmail.com</a></p>
+    <p>+15876641274</p>
+    <p><a href="https://www.linkedin.com/in/matin-sy/">https://www.linkedin.com/in/matin-sy/</a></p>
+
+</div>
+
+<script>
+    const stickyTech = document.querySelector(".sticky-tech");
+    const portfolioContent = document.querySelector(".portfolio-content");
+
+    window.addEventListener("load", function () {
+        setTimeout(() => {
+            stickyTech.classList.add("disappearing");
+        }, 1000); 
+    });
+
+    stickyTech.addEventListener("transitionend", function () {
+        stickyTech.style.display = "none";
+        portfolioContent.style.opacity = 1;
+    });
+</script>
+
+</body></html>
